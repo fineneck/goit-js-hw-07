@@ -1,8 +1,6 @@
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
 
-// console.log(galleryItems);
-
 const gallery = document.querySelector('.gallery');
 const cardsMarkup = createImgCardsMarkup(galleryItems);
 
@@ -30,48 +28,33 @@ function createImgCardsMarkup(galleryItems) {
 
 function onPictureClick(evt) {
   evt.preventDefault();
-  
+
   const galleryImage = evt.target.classList.contains('gallery__image');
 
   if (!galleryImage) {
     return;
-  };
-  // onModal();
-};
+  }
+
+  gallery.addEventListener('click', onModal);
+}
 
 function onModal(evt) {
   const instance = basicLightbox.create(
     `<img src="${evt.target.dataset.source}"/>`,
     {
-      onShow: (instance) => {
+      onShow: _instance => {
         gallery.addEventListener('keydown', onEscBtn);
-        once: true;
       },
-      onClose: (instance) => {
+      onClose: _instance => {
         gallery.removeEventListener('keydown', onEscBtn);
       },
     },
-    instance.show()  
   );
- 
+  instance.show();
+
   function onEscBtn(evt) {
     if (evt.code === 'Escape') {
     }
-    instance.close();    
+    instance.close();
   }
-};
-
-
-// function onPictureClick(evt) {
-//   evt.preventDefault();
-
-//   const galleryImage = evt.target.classList.contains('gallery__image');
-
-//   if (!galleryImage) {
-//     return;
-//   };
-
-//   const instance = basicLightbox.create(
-//     `<img src="${evt.target.dataset.source}"/>`);
-//   instance.show();
-// };
+}
