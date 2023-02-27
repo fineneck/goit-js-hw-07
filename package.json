@@ -2,5 +2,24 @@
   "dependencies": {
     "basiclightbox": "^5.0.4",
     "simplelightbox": "^2.12.1"
-  }
+  },
+  "name": "goit-js-hw-07",
+  "description": "goit-js-hw-07",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fineneck/goit-js-hw-07.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fineneck/goit-js-hw-07/issues"
+  },
+  "homepage": "https://github.com/fineneck/goit-js-hw-07#readme"
 }
